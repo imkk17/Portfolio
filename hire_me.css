@@ -12,7 +12,6 @@ body {
   background-color: #081b29;
   color: #ededed;
   overflow-x: hidden;
-  /* Gère la transition magique fluide du fond global */
   transition: background-color 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -580,14 +579,8 @@ body.menu-open .navbar-mobile { transform: translateX(0); }
 
 .click-info {
   font-size: 0.75rem;
-  color: #888;
-  margin-top: 3px;
-}
-
-.click-info {
-  font-size: 11px;
   color: #aaa;
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 .project-netflix.show-details .netflix-card-content {
@@ -607,12 +600,177 @@ body.menu-open .navbar-mobile { transform: translateX(0); }
 }
 
 /* Testimonials & Contact */
-.testimonials h2, .contact h2 { font-size: 1.8rem; margin-bottom: 1rem; color: #00abf0; text-align: center; }
-.testimonials blockquote { background: rgba(10, 44, 67, 0.5); backdrop-filter: blur(8px); padding: 1.5rem; border-radius: 12px; margin-bottom: 1rem; font-style: italic; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto; }
+.testimonials { margin-bottom: 4rem; }
+.testimonials h2, .contact h2 { font-size: 1.8rem; margin-bottom: 1.5rem; color: #00abf0; text-align: center; }
+.testimonials blockquote { background: rgba(10, 44, 67, 0.5); backdrop-filter: blur(8px); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; font-style: italic; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto; }
 .contact { text-align: center; margin-top: 3rem; }
 .contact p { margin-bottom: 1.5rem; }
 .contact .btn { padding: 0.75rem 1.5rem; background: #00abf0; border-radius: 8px; color: #081b29; font-weight: 600; text-decoration: none; display: inline-block; transition: 0.3s; }
 .contact .btn:hover { background: #008acb; transform: translateY(-2px); }
+
+/* Assessment Card Styles */
+.assessment-card {
+  background: rgba(10, 44, 67, 0.4);
+  border: 1px solid rgba(0, 171, 240, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  text-align: left;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.assessment-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 171, 240, 0.6);
+}
+
+.assessment-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}
+
+.assessment-header i {
+  font-size: 2.5rem;
+  color: #00abf0;
+}
+
+.assessment-header h3 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0;
+}
+
+.assessment-badge {
+  background: rgba(0, 171, 240, 0.15);
+  color: #00abf0;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: auto;
+  border: 1px solid rgba(0, 171, 240, 0.3);
+}
+
+.assessment-intro {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ededed;
+}
+
+/* DISC Graphs Mini-Dashboard Styles */
+.disc-graphs-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.disc-graph-box {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.disc-graph-box h4 {
+  font-size: 0.9rem;
+  color: #00abf0;
+  margin-bottom: 0.75rem;
+}
+
+.disc-scores {
+  display: flex;
+  justify-content: space-around;
+  gap: 0.4rem;
+}
+
+.disc-score-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.disc-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #081b29;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.disc-label {
+  font-size: 0.75rem;
+  color: #aaa;
+  font-weight: 600;
+}
+
+.disc-d { background: #ff5f5f; }
+.disc-i { background: #ffdf5f; }
+.disc-s { background: #5fff7f; }
+.disc-c { background: #5fcfff; }
+
+.assessment-summary {
+  background: rgba(0, 171, 240, 0.05);
+  border-left: 3px solid #00abf0;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #ededed;
+  line-height: 1.6;
+}
+
+.assessment-traits {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.assessment-traits li {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid #00abf0;
+}
+
+.assessment-traits li strong {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.assessment-traits li strong i {
+  color: #00abf0;
+  font-size: 1.2rem;
+}
+
+.assessment-traits li span {
+  font-size: 0.85rem;
+  color: #b0b0b0;
+  line-height: 1.4;
+  display: block;
+}
 
 /* Footer */
 footer { padding: 1.5rem 5%; text-align: center; background: #071522; margin-top: 3rem; }
@@ -668,7 +826,7 @@ footer .socials a { font-size: 1.5rem; color: #00abf0; }
   box-shadow: 0 6px 20px rgba(0, 171, 240, 0.3);
 }
 
-/* Animations d'émergence (liaison background-color) */
+/* Animations d'émergence */
 @keyframes fadeUpFromBackground {
   0% {
     opacity: 0;
@@ -680,11 +838,11 @@ footer .socials a { font-size: 1.5rem; color: #00abf0; }
   }
 }
 
-.service, .work-item, .project-netflix {
+.service, .work-item, .project-netflix, .assessment-card {
   animation: fadeUpFromBackground 0.8s cubic-bezier(0.25, 1, 0.5, 1) backwards;
 }
 
-/* Gestion du décalage (Stagger effect) pour l'apparition initiale */
+/* Gestion du décalage (Stagger effect) */
 .service:nth-child(1) { animation-delay: 0.1s; }
 .service:nth-child(2) { animation-delay: 0.25s; }
 .service:nth-child(3) { animation-delay: 0.4s; }
@@ -695,23 +853,6 @@ footer .socials a { font-size: 1.5rem; color: #00abf0; }
 .portfolio .work-item:nth-child(5) { animation-delay: 0.45s; }
 .portfolio .project-netflix { animation-delay: 0.55s; }
 
-/* Effet avancé de fondu au scroll (Scroll-Driven Animations) */
-@supports (animation-timeline: view()) {
-  .work-item img, .work-item .video-background {
-    animation: fadeAway linear both;
-    animation-timeline: view();
-    animation-range: exit 0% exit 80%;
-  }
-
-  @keyframes fadeAway {
-    to {
-      opacity: 0.15;
-      transform: scale(0.93);
-      filter: blur(8px) grayscale(50%);
-    }
-  }
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .header { padding: 10px 3%; }
@@ -721,6 +862,19 @@ footer .socials a { font-size: 1.5rem; color: #00abf0; }
   .download-button, .play-now-btn { width: 100%; justify-content: center; }
   .modal-footer { flex-direction: column; }
   .project-netflix { max-width: 100%; height: auto; min-height: 300px; }
+}
+
+@media (max-width: 600px) {
+  .assessment-traits, .disc-graphs-container {
+    grid-template-columns: 1fr;
+  }
+  .assessment-header {
+    flex-wrap: wrap;
+  }
+  .assessment-badge {
+    margin-left: 0;
+    margin-top: 10px;
+  }
 }
 
 @media (min-width: 769px) {
